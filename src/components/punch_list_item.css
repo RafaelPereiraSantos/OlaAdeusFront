@@ -1,0 +1,27 @@
+.punch-list {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.punch-list-item {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  height: 30px;
+  width: 100%;
+}
+
+.punch-list-item-description {
+  background-color: #ecffe6;
+  padding: 0 5px;
+  width: 80%;
+}
+
+.punch-list-item-time {
+  text-align: center;
+  background-color: #d9ffcc;
+  padding: 0 5px;
+  width: 20%;
+}
