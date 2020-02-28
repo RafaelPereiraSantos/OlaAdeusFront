@@ -7,8 +7,10 @@ class App extends React.Component {
   render() {
     const currentTime = new Date().toLocaleTimeString();
     return(
-      <div className="app-content">
-        <PunchForm currentTime={currentTime}/>
+      <div className="app">
+        <div className="app-content">
+          <PunchForm currentTime={currentTime}/>
+        </div>
       </div>
     );
   }

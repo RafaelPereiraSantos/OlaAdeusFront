@@ -29,7 +29,7 @@ class PunchForm extends React.Component {
       punch_time: currentTime
     });
 
-    fetch(punch_api_url, {method: 'post', headers: headers, body: body})
+    fetch(punch_api_url, { method: 'post', headers: headers, body: body, credentials: 'include' })
       .then((res) => {
         this.updatePunchList();
       })
@@ -41,10 +41,11 @@ class PunchForm extends React.Component {
   updatePunchList() {
     const punches_api_url = 'http://localhost:3001/punches';
 
-    fetch(punches_api_url)
+    fetch(punches_api_url, { credentials: 'include' })
       .then((res) => res.json())
       .then((body) => {
-        this.setState({punches: body});
+        console.log(body);
+        this.setState({ punches: body });
       })
       .catch((err) => {
         console.log(err)
