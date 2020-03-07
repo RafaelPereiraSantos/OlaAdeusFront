@@ -18,7 +18,6 @@ ol {
   background-color: #e6e6e6;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   width: 720px;
   height: 860px;
 }

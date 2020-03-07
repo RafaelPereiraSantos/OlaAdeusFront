@@ -44,7 +44,6 @@ class PunchForm extends React.Component {
     fetch(punches_api_url, { credentials: 'include' })
       .then((res) => res.json())
       .then((body) => {
-        console.log(body);
         this.setState({ punches: body });
       })
       .catch((err) => {
