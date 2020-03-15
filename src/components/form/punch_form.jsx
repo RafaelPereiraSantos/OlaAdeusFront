@@ -1,9 +1,8 @@
 import React from 'react';
-import AppHeader from './app_header.jsx';
 import PunchButton from './punch_button.jsx';
 import PunchList from './punch_list.jsx';
-import Clock from './clock.jsx';
-import './punch_form.css'
+import Clock from '../others/clock.jsx';
+import './styles/punch_form.css'
 
 class PunchForm extends React.Component {
   constructor(props) {
@@ -54,9 +53,6 @@ class PunchForm extends React.Component {
   render() {
     return(
       <div className="punch-form-content">
-        <div className="punch-row">
-          <AppHeader/>
-        </div>
         <div className="punch-row">
           <Clock time={this.state.currentTime.toLocaleTimeString()}/>
         </div>

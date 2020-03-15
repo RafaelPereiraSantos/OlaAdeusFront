@@ -10,14 +10,21 @@ ol {
 .app {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .app-content {
   padding: 0;
   display: flex;
   background-color: #e6e6e6;
-  display: flex;
   justify-content: center;
-  width: 720px;
-  height: 860px;
+  width: 50%;
+  min-width: 480px;
+  min-height: 860px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: green;
 }

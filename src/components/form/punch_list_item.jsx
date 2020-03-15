@@ -1,5 +1,5 @@
 import React from 'react';
-import './punch_list_item.css'
+import './styles/punch_list_item.css'
 
 class PunchListItem extends React.Component {
   render() {

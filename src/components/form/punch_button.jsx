@@ -1,5 +1,5 @@
 import React from 'react';
-import './punch_button.css';
+import './styles/punch_button.css';
 
 class PunchButton extends React.Component {
   render() {

@@ -7,8 +7,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
   align-self:flex-end;
+  width: 100%;
 }
 
 .punch-form-content {

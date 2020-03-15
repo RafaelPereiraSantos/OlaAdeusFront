@@ -1,0 +1,21 @@
+
+.field-content {
+
+}
+
+.field-label {
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.field-input-content {
+  margin-bottom: 20px;
+}
+
+.field-input-input {
+  width: 320px;
+  height: 30px;
+  border: 1px solid grey;
+  border-radius: 6px;
+  padding: 5px;
+}

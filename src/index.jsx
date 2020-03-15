@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PunchForm from './components/punch_form.jsx';
-import SignUpForm from './components/sign_up_form.jsx';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import PunchForm from './components/form/punch_form.jsx';
+import SignUpForm from './components/form/sign_up_form.jsx';
+import SignInForm from './components/form/sign_in_form.jsx';
+import SignOut from './components/others/sign_out.jsx';
+import AppHeader from './components/others/app_header.jsx';
+import AppBottom from './components/others/app_bottom.jsx';
 
 import './index.css';
 
@@ -11,32 +16,38 @@ class App extends React.Component {
     const currentTime = new Date().toLocaleTimeString();
     return(
       <div className="app">
-        <div className="app-content">
         <Router>
-          <Switch>
+          <AppHeader/>
+          <div className="app-content">
+            <Switch>
 
-            <Route path="/sign-in">
-              sign in
-            </Route>
+              <Route path="/sign-in">
+                <SignInForm/>
+              </Route>
 
-            <Route path="/sign-up">
-              <SignUpForm/>
-            </Route>
+              <Route path="/sign-up">
+                <SignUpForm/>
+              </Route>
 
-            <Route path="/punches">
-              <PunchForm currentTime={currentTime}/>
-            </Route>
+              <Route path="/sign-out">
+                <SignOut/>
+              </Route>
 
-            <Route path="*">
-              <div>
-                not found
-              </div>
-            </Route>
+              <Route path="/punches">
+                <PunchForm currentTime={currentTime}/>
+              </Route>
 
-          </Switch>
-        </Router>
+              <Route path="*">
+                <div>
+                  not found
+                </div>
+              </Route>
 
-      </div>
+            </Switch>
+
+        </div>
+        <AppBottom/>
+      </Router>
     </div>
     );
   }
