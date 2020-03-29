@@ -24,10 +24,8 @@ let UserRepository = {}
 
 UserRepository.signIn = (email_address, password, success, failure) => {
   const body = JSON.stringify({
-    user: {
-      email_address: email_address.value,
-      password: password.value,
-    }
+    email_address: email_address.value,
+    password: password.value,
   });
 
   post(punch_api_sign_in_url, body, success, failure)
@@ -39,11 +37,9 @@ UserRepository.signOut = (success, failure) => {
 
 UserRepository.registerUser = (user_name, email_address, password, success, failure) => {
   const body = JSON.stringify({
-    user: {
-      name: user_name.value,
-      email_address: email_address.value,
-      password: password.value,
-    }
+    name: user_name.value,
+    email_address: email_address.value,
+    password: password.value,
   });
 
   post(punch_api_sign_up_url, body, success, failure)

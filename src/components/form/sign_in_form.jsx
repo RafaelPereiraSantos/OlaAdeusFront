@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 
+import FormTitle from './form_title.jsx'
 import FormField from './form_field.jsx'
 import UserRepository from '../../repository/user_repository.jsx'
 
@@ -102,6 +103,7 @@ class SignUpForm extends React.Component {
 
     return(
       <div className="sign-up-form-content">
+        <FormTitle title="Entrar"/>
         <form onSubmit={this.handleSubmit.bind(this)} className="sign-up-form">
           <FormField type="text" onChange={onChange} field={email_address}/>
           <FormField type="password" onChange={onChange} field={password}/>

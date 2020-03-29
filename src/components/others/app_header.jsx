@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import UserRepository from '../../repository/user_repository.jsx'
+import HeaderMenu from './header_menu.jsx'
 
 import './styles/app_header.css';
 
@@ -30,35 +31,6 @@ class AppHeader extends React.Component {
   }
 
   render() {
-    const { user } = this.state;
-    let content_right = null;
-
-    if (user === null) {
-
-      content_right = <div className="header-content-right">
-        <div className="header-menu">
-          <ul className="header-menu-list">
-            <MenuItem url="/sign-in" text="Sign-in"/>
-            <MenuItem url="/sign-up" text="Sign-up"/>
-          </ul>
-        </div>
-      </div>
-
-    } else {
-
-      content_right = <div className="header-content-right">
-        <div className="header-menu">
-          <ul className="header-menu-list">
-            <MenuItem url="/sign-out" text="Sign-out"/>
-          </ul>
-        </div>
-        <div className="user-name">
-          <h2><Link to="/profile">{user.name}</Link></h2>
-        </div>
-      </div>
-
-    }
-
     return(
       <div className="header">
         <div className="header-content">
@@ -75,8 +47,9 @@ class AppHeader extends React.Component {
               </ul>
             </div>
           </div>
-
-          {content_right}
+          <div className="header-content-right">
+            <HeaderMenu user={this.state.user}/>
+          </div>
 
         </div>
       </div>

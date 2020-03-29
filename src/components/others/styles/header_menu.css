@@ -1,0 +1,55 @@
+ol li {
+  list-style-type: none;
+}
+
+.header-menu {
+  flex-direction: column;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto 0;
+}
+
+.header-menu-list {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  height: 100%;
+}
+
+.header-menu-drop-down {
+  position: relative;
+  display: inline-block;
+}
+
+.header-menu-list-drop-down {
+  display: none;
+  position: absolute;
+  width: auto;
+  height: 100%;
+  z-index: 1;
+}
+
+.header-menu-drop-down:hover .header-menu-list-drop-down {
+  display: block;
+}
+
+.header-menu-item-drop-down {
+  min-width: 100px;
+  min-height: 50px;
+  background-color: white;
+  border: solid 1px black;
+}
+
+.header-menu-item {
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  min-height: 10px;
+  color: white;
+}
+
+.user-name {
+  margin-left: 20px;
+}

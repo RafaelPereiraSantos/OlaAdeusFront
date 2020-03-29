@@ -35,30 +35,3 @@
   padding-left: 20px;
   color: white;
 }
-
-.header-menu {
-  flex-direction: column;
-  padding-left: 20px;
-  display: flex;
-  justify-content: space-between;
-  margin: auto 0;
-}
-
-.header-menu-list {
-  display: flex;
-  justify-content: space-between;
-  width: auto;
-  height: 100%;
-}
-
-.header-menu-item {
-  padding-left: 20px;
-  display: flex;
-  justify-content: space-between;
-  width: auto;
-  color: white;
-}
-
-.user-name {
-  margin-left: 20px;
-}

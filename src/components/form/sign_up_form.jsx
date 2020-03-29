@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
+import FormTitle from './form_title.jsx'
 import FormField from './form_field.jsx'
 import UserRepository from '../../repository/user_repository.jsx'
 
@@ -59,7 +61,7 @@ class SignUpForm extends React.Component {
         user_name,
         email_address,
         password,
-        this.redirectToHome(),
+        this.redirectToHome.bind(this),
         (err) => { this.setState({ form_error: err.toString() }) }
       );
     }
@@ -122,7 +124,7 @@ class SignUpForm extends React.Component {
   }
 
   redirectToHome() {
-
+    this.setState({ logged: true })
   }
 
   render() {
@@ -146,6 +148,7 @@ class SignUpForm extends React.Component {
 
     return(
       <div className="sign-up-form-content">
+        <FormTitle title="Cadastro"/>
         <form onSubmit={this.handleSubmit.bind(this)} className="sign-up-form">
           <FormField type="text" onChange={onChange} field={user_name}/>
           <FormField type="text" onChange={onChange} field={email_address}/>
@@ -161,6 +164,7 @@ class SignUpForm extends React.Component {
             {error_label}
           </div>
         </form>
+        { this.state.logged ? <Redirect to="/"/> : null }
       </div>
     );
   }

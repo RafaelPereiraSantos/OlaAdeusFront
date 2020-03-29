@@ -1,6 +1,8 @@
 .sign-up-form-content {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 330px;
 }
 
@@ -9,7 +11,7 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  /*height: 100%;*/
 }
 
 .submit-form-button {
