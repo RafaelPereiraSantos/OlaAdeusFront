@@ -51,9 +51,9 @@ class HeaderMenu extends React.Component {
 function MenuItem(props) {
 
   return(
-    <li className="header-menu-item">
+    <div className="header-menu-item">
       <Link to={props.url}>{props.text}</Link>
-    </li>
+    </div >
   );
 };
 

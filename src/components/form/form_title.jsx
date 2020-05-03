@@ -3,10 +3,6 @@ import React from 'react';
 import './styles/form_title.css'
 
 class FormTitle extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return(
       <div className="title-content">

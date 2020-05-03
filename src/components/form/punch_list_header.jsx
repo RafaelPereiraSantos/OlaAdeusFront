@@ -1,16 +1,16 @@
 import React from 'react';
 import './styles/punch_list_item.css'
 
-class PunchListItem extends React.Component {
+class PunchListHeader extends React.Component {
   render() {
     return(
       <li>
         <div className="punch-list-item">
           <div className="punch-list-item-description">
-            {this.props.punch_type}
+            <b>{this.props.type_description}</b>
           </div>
           <div className="punch-list-item-time">
-            {this.props.time || 'no-time'}
+            <b>{this.props.time_description}</b>
           </div>
         </div>
       </li>
@@ -18,4 +18,4 @@ class PunchListItem extends React.Component {
   }
 }
 
-export default PunchListItem;
+export default PunchListHeader;

@@ -38,21 +38,19 @@ class PunchForm extends React.Component {
   }
 
   updatePunchList() {
-    const punches_api_url = 'http://localhost:3001/punches';
-
+    const punches_api_url = 'http://localhost:3001/user/' + this.props.user.slug + '/punches';
     fetch(punches_api_url, { credentials: 'include' })
       .then((res) => res.json())
-      .then((body) => {
-        this.setState({ punches: body });
-      })
-      .catch((err) => {
-        console.log(err)
-      });
+      .then((body) => { this.setState({ punches: body }); })
+      .catch((err) => { console.log(err) });
   }
 
   render() {
     return(
       <div className="punch-form-content">
+        <div className="punch-row">
+          <h3>Time now</h3>
+        </div>
         <div className="punch-row">
           <Clock time={this.state.currentTime.toLocaleTimeString()}/>
         </div>
@@ -62,12 +60,12 @@ class PunchForm extends React.Component {
 
         <div className="punch-buttons">
           <div className="punch-row">
-            <PunchButton description={"Saida Almoço"} onClick={this.handlerPunch}/>
-            <PunchButton description={"Volta Almoço"} onClick={this.handlerPunch}/>
+            <PunchButton description={"Lunch Break"} onClick={this.handlerPunch}/>
+            <PunchButton description={"Lunch End"} onClick={this.handlerPunch}/>
           </div>
           <div className="punch-row">
-            <PunchButton description={"Entrada"} onClick={this.handlerPunch}/>
-            <PunchButton description={"Saida"} onClick={this.handlerPunch}/>
+            <PunchButton description={"Entrace"} onClick={this.handlerPunch}/>
+            <PunchButton description={"Exit"} onClick={this.handlerPunch}/>
           </div>
         </div>
       </div>

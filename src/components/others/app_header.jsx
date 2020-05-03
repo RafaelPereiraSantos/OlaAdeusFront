@@ -1,35 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import UserRepository from '../../repository/user_repository.jsx'
 import HeaderMenu from './header_menu.jsx'
 
 import './styles/app_header.css';
 
 class AppHeader extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: null
-    }
-  }
-
-  componentDidMount() {
-    this.user_request = UserRepository.user(
-      (user) => {
-        this.setState({ user: user })
-        console.log(111);
-      },
-      (err) => { }
-    )
-  }
-
-  componentWillUnmount() {
-    if (this.user_request) {
-      this.user_request.cancel();
-    }
-  }
-
   render() {
     return(
       <div className="header">
@@ -48,9 +24,8 @@ class AppHeader extends React.Component {
             </div>
           </div>
           <div className="header-content-right">
-            <HeaderMenu user={this.state.user}/>
+            <HeaderMenu user={this.props.user}/>
           </div>
-
         </div>
       </div>
     );
@@ -58,7 +33,6 @@ class AppHeader extends React.Component {
 }
 
 function MenuItem(props) {
-
   return(
     <li className="header-menu-item">
       <Link to={props.url}>{props.text}</Link>

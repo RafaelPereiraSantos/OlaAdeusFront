@@ -9,14 +9,16 @@ function post(url, body, success, failure) {
     'Content-Type': 'application/json'
   };
   fetch(url, { method: 'post', headers: headers, body: body, credentials: 'include' })
-    .then((res) => { success(res) })
+    .then((res) => res.json())
+    .then((body) => { success(body) })
     .catch((err) => { failure(err) });
 };
 
 function get(url, success, failure) {
   fetch(punch_api_user_url, { method: 'get', credentials: 'include' })
     .then((res) => res.json())
-    .then((body) => { success(body) })
+    .then((body) => {
+      success(body) })
     .catch((err) => { failure(err) })
 }
 

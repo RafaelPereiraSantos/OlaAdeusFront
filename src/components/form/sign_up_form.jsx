@@ -111,7 +111,7 @@ class SignUpForm extends React.Component {
       new_password_state.error = ''
     }
 
-    if (new_password_state.value != new_confirm_password_state.value) {
+    if (new_password_state.value !== new_confirm_password_state.value) {
       new_confirm_password_state.error = 'Confirmação diferente da senha original';
     } else {
       new_confirm_password_state.error = ''

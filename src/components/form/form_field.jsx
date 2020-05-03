@@ -1,12 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './styles/form_field.css'
 
 class FormField extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { field, onChange, type} = this.props;
     const { label, id, error } = field;

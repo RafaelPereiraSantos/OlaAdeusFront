@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
 
 import FormTitle from './form_title.jsx'
 import FormField from './form_field.jsx'
@@ -12,7 +11,6 @@ class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      logged: false,
       form_error: '',
       email_address: {
         label: 'Endereço de E-mail',
@@ -40,7 +38,7 @@ class SignUpForm extends React.Component {
       UserRepository.signIn(
         email_address,
         password,
-        this.redirectToHome.bind(this),
+        this.props.onSignIn,
         function(err) { this.setState({ form_error: err.toString() }) }.bind(this)
       );
     }
@@ -80,10 +78,6 @@ class SignUpForm extends React.Component {
     this.setState({ password: new_password_state })
   }
 
-  redirectToHome() {
-    this.setState({ logged: true })
-  }
-
   render() {
 
     const onChange = this.handleChange.bind(this);
@@ -117,7 +111,6 @@ class SignUpForm extends React.Component {
             {error_label}
           </div>
         </form>
-        { this.state.logged ? <Redirect to="/"/> : null }
       </div>
     );
   }
