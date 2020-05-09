@@ -8,22 +8,22 @@ import './styles/app_header.css';
 class AppHeader extends React.Component {
   render() {
     return(
-      <div className="header">
-        <div className="header-content">
+      <div className='header'>
+        <div className='header-content'>
 
-          <div className="header-content-left">
-            <div className="header-title">
-              <h1><Link to="/">Olá Adeus</Link></h1>
+          <div className='header-content-left'>
+            <div className='header-title'>
+              <h1><Link to='/'>Olá Adeus</Link></h1>
             </div>
 
-            <div className="header-menu">
-              <ul className="header-menu-list">
-                <MenuItem url="/" text="Home"/>
-                <MenuItem url="/punches" text="My Punches"/>
+            <div className='header-menu'>
+              <ul className='header-menu-list'>
+                <MenuItem url='/' text='Home'/>
+                <MenuItem url='/punches' text='My Punches'/>
               </ul>
             </div>
           </div>
-          <div className="header-content-right">
+          <div className='header-content-right'>
             <HeaderMenu user={this.props.user}/>
           </div>
         </div>
@@ -34,7 +34,7 @@ class AppHeader extends React.Component {
 
 function MenuItem(props) {
   return(
-    <li className="header-menu-item">
+    <li className='header-menu-item'>
       <Link to={props.url}>{props.text}</Link>
     </li>
   );

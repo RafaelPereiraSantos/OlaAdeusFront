@@ -9,18 +9,18 @@ class FormField extends React.Component {
     let error_label;
 
     if (error !== '') {
-      error_label = <div className="field-error-label">
+      error_label = <div className='field-error-label'>
         *{error}
       </div>
     }
 
     return(
-      <div className="field-content">
-        <div className="field-label">
+      <div className='field-content'>
+        <div className='field-label'>
           {label}
         </div>
-        <div className="field-input-content">
-          <input type={type} onChange={onChange} id={id} className="field-input-input" />
+        <div className='field-input-content'>
+          <input type={type} onChange={onChange} id={id} className='field-input-input' />
           {error_label}
         </div>
       </div>

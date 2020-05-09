@@ -5,11 +5,11 @@ class PunchListItem extends React.Component {
   render() {
     return(
       <li>
-        <div className="punch-list-item">
-          <div className="punch-list-item-description">
+        <div className='punch-list-item'>
+          <div className='punch-list-item-description'>
             {this.props.punch_type}
           </div>
-          <div className="punch-list-item-time">
+          <div className='punch-list-item-time'>
             {this.props.time || 'no-time'}
           </div>
         </div>

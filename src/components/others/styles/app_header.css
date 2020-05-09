@@ -1,10 +1,13 @@
+@import '../../../common/color.css';
+
 .header {
-  background-color: grey;
+  background-color: var(--blue);
   flex-direction: column;
   display: flex;
   justify-content: center;
   min-height: 80px;
   width: 100%;
+  color: var(--beige);
 }
 
 .header-content {
@@ -33,5 +36,4 @@
 
 .header-title {
   padding-left: 20px;
-  color: white;
 }

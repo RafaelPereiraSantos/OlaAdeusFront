@@ -10,10 +10,9 @@ class PunchList extends React.Component {
       <PunchListHeader key={'title'} type_description={'Tipo'} time_description={'Horario'}/>
     );
     for (let punch of this.props.punches) {
-      const { date, time, punch_type } = punch;
-      console.log(punch)
-      const key = btoa(date + time + punch_type);
-      punches.push(<PunchListItem key={key} punch_type={punch_type} time={time}/>);
+      const { date, time, type } = punch;
+      const key = btoa(date + time + type);
+      punches.push(<PunchListItem key={key} punch_type={type} time={time}/>);
     }
 
     return(

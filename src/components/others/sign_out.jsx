@@ -21,7 +21,7 @@ class SignOut extends React.Component {
   render() {
     return(
       <div>
-        { this.props.user ? 'You are been redirected...' : <Redirect to="/sign-in"/> }
+        { this.props.user ? 'You are been redirected...' : <Redirect to='/sign-in'/> }
       </div>
     );
   }

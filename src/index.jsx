@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 
 import PunchForm from './components/form/punch_form.jsx';
@@ -29,18 +29,17 @@ class App extends React.Component {
   }
 
   handleSignIn(user) {
-    console.log(user)
     this.setState({
       user: {
+        id: user.id,
         name: user.name,
         email: user.email,
         slug: user.slug
-      }
+      },
     });
   }
 
   handleSignOut() {
-    console.log('asdasdasdasd')
     this.setState({ user: null });
   }
 
@@ -48,57 +47,57 @@ class App extends React.Component {
     this.user_request = UserRepository.user(
       this.handleSignIn.bind(this),
       (err) => { }
-    )
+    );
   }
 
   componentWillUnmount() {
+    clearInterval(this.state.timeInterval);
     if (this.user_request) {
       this.user_request.cancel();
     }
   }
 
   render() {
-    const currentTime = new Date().toLocaleTimeString();
     const user = this.state.user;
 
     const logged_page = (page) => {
-      return user ? page: <Redirect to="/sign-in"/>;
+      return user ? page: <Redirect to='/sign-in'/>;
     }
 
     const unlogged_page = (page) => {
-      return !user ? page: <Redirect to="/punches"/>;
+      return !user ? page: <Redirect to='/punches'/>;
     }
 
     return(
-      <div className="app">
+      <div className='app'>
         <Router>
           <AppHeader user={this.state.user}/>
-          <div className="app-content">
+          <div className='app-content'>
             <Switch>
 
-              <Route path="/sign-in">
+              <Route path='/sign-in'>
                 { unlogged_page(<SignInForm onSignIn={this.handleSignIn.bind(this)}/>) }
               </Route>
 
-              <Route path="/sign-up">
+              <Route path='/sign-up'>
                 { unlogged_page(<SignUpForm/>) }
               </Route>
 
-              <Route path="/sign-out">
+              <Route path='/sign-out'>
                 { logged_page(<SignOut user={user}  onSignOut={this.handleSignOut.bind(this)}/>) }
               </Route>
 
-              <Route path="/punches">
-                { logged_page(<PunchForm user={user} currentTime={currentTime}/>) }
+              <Route path='/punches'>
+                { logged_page(<PunchForm user={user}/>) }
               </Route>
 
-              <Route path="/404">
-                <NotFound currentTime={currentTime}/>
+              <Route path='/404'>
+                <NotFound/>
               </Route>
 
-              <Route path="*">
+              <Route path='*'>
                 <div>
-                  { <Redirect to="/404"/> }
+                  { <Redirect to='/404'/> }
                 </div>
               </Route>
 

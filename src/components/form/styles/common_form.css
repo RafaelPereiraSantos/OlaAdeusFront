@@ -1,9 +1,12 @@
+@import '../../../common/color.css';
+
 .sign-up-form-content {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 330px;
+  color: var(--blue);
 }
 
 .sign-up-form {
@@ -11,16 +14,16 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  /*height: 100%;*/
 }
 
 .submit-form-button {
   width: 100%;
   height: 40px;
-  border: 1px solid #79ff4d;
+  border: 1px solid var(--green);
   border-radius: 6px;
   padding: 5px;
-  background-color: #79ff4d;
+  background-color: var(--green);
+  color: var(--white);
 }
 
 .submit-form-button:focus {
@@ -28,7 +31,7 @@
 }
 
 .field-error-label {
-  color: red;
+  color: var(--red);
   margin-left: 5px;
   margin-bottom: 5px;
 }
@@ -42,5 +45,10 @@
 }
 
 .form-error-label {
-  color: red;
+  color: var(--red);
+}
+
+.form-bottom-item a {
+  text-decoration: none;
+  color: var(--green);
 }

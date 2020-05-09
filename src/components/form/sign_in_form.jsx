@@ -33,13 +33,29 @@ class SignUpForm extends React.Component {
 
     const { email_address, password } = this.state;
 
+    const handleException = (e) => {
+      handleErrorMessage(e.toString())
+    };
+
+    const handleErrorMessage = (err) => {
+      this.setState({ form_error: err.toString() })
+    };
+
+    const handleResponse = (body) => {
+      if (body.error_message) {
+        handleErrorMessage(body.error_message);
+      } else {
+        this.props.onSignIn(body);
+      }
+    };
+
     if (email_address.error === '' && password.error === '') {
       const { email_address, password } = this.state;
       UserRepository.signIn(
         email_address,
         password,
-        this.props.onSignIn,
-        function(err) { this.setState({ form_error: err.toString() }) }.bind(this)
+        handleResponse,
+        handleException
       );
     }
 
@@ -90,23 +106,23 @@ class SignUpForm extends React.Component {
     let error_label;
 
     if (form_error !== '') {
-      error_label = <div className="form-bottom-item form-error-label">
+      error_label = <div className='form-bottom-item form-error-label'>
         *{form_error}
       </div>
     }
 
     return(
-      <div className="sign-up-form-content">
-        <FormTitle title="Entrar"/>
-        <form onSubmit={this.handleSubmit.bind(this)} className="sign-up-form">
-          <FormField type="text" onChange={onChange} field={email_address}/>
-          <FormField type="password" onChange={onChange} field={password}/>
-          <div className="field-input-content">
-            <input type="submit" value="Entrar" className="submit-form-button"/>
+      <div className='sign-up-form-content'>
+        <FormTitle title='Entrar'/>
+        <form onSubmit={this.handleSubmit.bind(this)} className='sign-up-form'>
+          <FormField type='text' onChange={onChange} field={email_address}/>
+          <FormField type='password' onChange={onChange} field={password}/>
+          <div className='field-input-content'>
+            <input type='submit' value='Entrar' className='submit-form-button'/>
           </div>
-          <div className="form-bottom-content">
-            <div className="form-bottom-item">
-              Ainda não é cadastrado? <Link to="/sign-up"> Cadastrar-se </Link>
+          <div className='form-bottom-content'>
+            <div className='form-bottom-item'>
+              Ainda não é cadastrado? <Link to='/sign-up'> Cadastrar-se </Link>
             </div>
             {error_label}
           </div>

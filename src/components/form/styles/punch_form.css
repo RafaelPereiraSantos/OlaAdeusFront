@@ -1,3 +1,5 @@
+@import '../../../common/color.css';
+
 .punch-row {
   display: flex;
   justify-content: center;
@@ -9,6 +11,7 @@
   flex-direction: column;
   align-self:flex-end;
   width: 100%;
+  background-color: var(--light-green);
 }
 
 .punch-form-content {

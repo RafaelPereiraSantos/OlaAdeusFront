@@ -141,30 +141,30 @@ class SignUpForm extends React.Component {
     let error_label;
 
     if (form_error !== '') {
-      error_label = <div className="form-bottom-item form-error-label">
+      error_label = <div className='form-bottom-item form-error-label'>
         *{form_error}
       </div>
     }
 
     return(
-      <div className="sign-up-form-content">
-        <FormTitle title="Cadastro"/>
-        <form onSubmit={this.handleSubmit.bind(this)} className="sign-up-form">
-          <FormField type="text" onChange={onChange} field={user_name}/>
-          <FormField type="text" onChange={onChange} field={email_address}/>
-          <FormField type="password" onChange={onChange} field={password}/>
-          <FormField type="password" onChange={onChange} field={confirm_password}/>
-          <div className="field-input-content">
-            <input type="submit" value="Cadastrar" className="submit-form-button"/>
+      <div className='sign-up-form-content'>
+        <FormTitle title='Cadastro'/>
+        <form onSubmit={this.handleSubmit.bind(this)} className='sign-up-form'>
+          <FormField type='text' onChange={onChange} field={user_name}/>
+          <FormField type='text' onChange={onChange} field={email_address}/>
+          <FormField type='password' onChange={onChange} field={password}/>
+          <FormField type='password' onChange={onChange} field={confirm_password}/>
+          <div className='field-input-content'>
+            <input type='submit' value='Cadastrar' className='submit-form-button'/>
           </div>
-          <div className="form-bottom-content">
-            <div className="form-bottom-item">
-              Já é cadastrado? <Link to="/sign-in"> Entrar </Link>
+          <div className='form-bottom-content'>
+            <div className='form-bottom-item'>
+              Já é cadastrado? <Link to='/sign-in'> Entrar </Link>
             </div>
             {error_label}
           </div>
         </form>
-        { this.state.logged ? <Redirect to="/"/> : null }
+        { this.state.logged ? <Redirect to='/'/> : null }
       </div>
     );
   }

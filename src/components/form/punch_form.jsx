@@ -8,24 +8,51 @@ class PunchForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentDate: new Date(),
+      timeInterval: null,
       punches: [],
-      currentTime: new Date()
     };
   }
 
   componentDidMount() {
     this.updatePunchList();
+
+    const oneSec = 1000;
+    this.setState({
+      timeInterval: setInterval(() => {
+        this.setState({ currentDate: new Date() });
+      },
+      oneSec)
+    });
   }
 
-  handlerPunch(type, currentTime) {
+  componentWillUnmount() {
+    clearInterval(this.state.timeInterval);
+  }
+
+  handlerPunch(type) {
+    console.log(this.props.user);
     const punch_api_url = 'http://localhost:3001/punch';
     const headers = {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     };
+
+    const date = this.state.currentDate;
+
+    const formatNumber = (number) => {
+      const number_s = number.toString()
+      return number_s.length === 1 ? '0' + number_s : number_s;
+    }
+
+    const currentDay = formatNumber(date.getDate());
+    const currentMonth = formatNumber(date.getMonth());
+
     const body = JSON.stringify({
-      punch_type: type,
-      punch_time: currentTime
+      user_id: this.props.user.id,
+      date: `${date.getFullYear()}-${currentDay}-${currentMonth}`,
+      time: date.toLocaleTimeString().split(' ')[0],
+      type: type,
     });
 
     fetch(punch_api_url, { method: 'post', headers: headers, body: body, credentials: 'include' })
@@ -47,25 +74,25 @@ class PunchForm extends React.Component {
 
   render() {
     return(
-      <div className="punch-form-content">
-        <div className="punch-row">
+      <div className='punch-form-content'>
+        <div className='punch-row'>
           <h3>Time now</h3>
         </div>
-        <div className="punch-row">
-          <Clock time={this.state.currentTime.toLocaleTimeString()}/>
+        <div className='punch-row'>
+          <Clock time={this.state.currentDate.toLocaleTimeString()}/>
         </div>
-        <div className="punch-list">
+        <div className='punch-list'>
           <PunchList punches={this.state.punches}/>
         </div>
 
-        <div className="punch-buttons">
-          <div className="punch-row">
-            <PunchButton description={"Lunch Break"} onClick={this.handlerPunch}/>
-            <PunchButton description={"Lunch End"} onClick={this.handlerPunch}/>
+        <div className='punch-buttons'>
+          <div className='punch-row'>
+            <PunchButton description={'Lunch Break'} onClick={this.handlerPunch.bind(this)}/>
+            <PunchButton description={'Lunch End'} onClick={this.handlerPunch.bind(this)}/>
           </div>
-          <div className="punch-row">
-            <PunchButton description={"Entrace"} onClick={this.handlerPunch}/>
-            <PunchButton description={"Exit"} onClick={this.handlerPunch}/>
+          <div className='punch-row'>
+            <PunchButton description={'Entrace'} onClick={this.handlerPunch.bind(this)}/>
+            <PunchButton description={'Exit'} onClick={this.handlerPunch.bind(this)}/>
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+@import '../../../common/color.css';
+
 ol li {
   list-style-type: none;
 }
@@ -37,8 +39,8 @@ ol li {
 .header-menu-item-drop-down {
   min-width: 100px;
   min-height: 50px;
-  background-color: white;
-  border: solid 1px black;
+  background-color: var(--light-green);
+  border: solid 1px var(--green);
 }
 
 .header-menu-item {

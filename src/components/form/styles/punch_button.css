@@ -1,15 +1,19 @@
+@import '../../../common/color.css';
+
 .punch-button {
   text-align: center;
-  width: 80%;
+  width: 100%;
   height: 50px;
-
+  margin: 2px;
   outline: none;
-  border: 2px solid #79ff4d;
+  border: 1px solid var(--blue);
   border-radius: 25px;
   font-size: 24px;
-  background-color: #79ff4d;
+  background-color: var(--blue);
+  color: var(--beige);
 }
 
 .punch-button:hover {
-  background-color: white;
+  background-color: var(--beige);
+  color: var(--blue);
 }

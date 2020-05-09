@@ -1,3 +1,5 @@
+@import './common/color.css';
+
 * {
   padding: 0;
   margin: 0;
@@ -16,7 +18,7 @@ ol {
 .app-content {
   padding: 0;
   display: flex;
-  background-color: #e6e6e6;
+  background-color: var(--beige);
   justify-content: center;
   width: 50%;
   min-width: 480px;
@@ -26,5 +28,5 @@ ol {
 
 a {
   text-decoration: none;
-  color: green;
+  color: var(--beige);
 }
