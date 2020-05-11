@@ -58,6 +58,9 @@ class App extends React.Component {
   }
 
   render() {
+    const params = new URLSearchParams(window.location.search);
+    const date = params.get('date')
+    console.log(date)
     const user = this.state.user;
 
     const logged_page = (page) => {
@@ -88,7 +91,15 @@ class App extends React.Component {
               </Route>
 
               <Route path='/punches'>
-                { logged_page(<PunchForm user={user}/>) }
+                { logged_page(<PunchForm user={user} date={date}/>) }
+              </Route>
+
+              <Route path='/punch'>
+                // custom_punch_page
+              </Route>
+
+              <Route path='/callender'>
+                // select_date_page
               </Route>
 
               <Route path='/404'>

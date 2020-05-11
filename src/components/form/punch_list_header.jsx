@@ -7,10 +7,10 @@ class PunchListHeader extends React.Component {
       <li>
         <div className='punch-list-item'>
           <div className='punch-list-item-description'>
-            <b>{this.props.type_description}</b>
+            <b>{this.props.typeDescription}</b>
           </div>
           <div className='punch-list-item-time'>
-            <b>{this.props.time_description}</b>
+            <b>{this.props.timeDescription}</b>
           </div>
         </div>
       </li>

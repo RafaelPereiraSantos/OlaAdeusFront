@@ -1,0 +1,15 @@
+@import '../../../common/color.css';
+
+.punch-list-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.no-punches {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: var(--blue);
+}

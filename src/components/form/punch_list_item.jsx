@@ -7,7 +7,7 @@ class PunchListItem extends React.Component {
       <li>
         <div className='punch-list-item'>
           <div className='punch-list-item-description'>
-            {this.props.punch_type}
+            {this.props.punchType}
           </div>
           <div className='punch-list-item-time'>
             {this.props.time || 'no-time'}

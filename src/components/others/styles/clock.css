@@ -1,0 +1,35 @@
+@import '../../../common/color.css';
+
+.clock-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clock-content a {
+  color: var(--beige);
+}
+
+.clock-middle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 120px;
+  width: 70%;
+}
+
+.clock-side {
+  width: 30%;
+  background-color: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-current-title {
+  text-align: center;
+}
+
+.clock-current-time {
+  text-align: center;
+}

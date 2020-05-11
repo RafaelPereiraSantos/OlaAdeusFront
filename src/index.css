@@ -20,7 +20,7 @@ ol {
   display: flex;
   background-color: var(--beige);
   justify-content: center;
-  width: 50%;
+  width: 35%;
   min-width: 480px;
   min-height: 860px;
   margin: 0 auto;
@@ -29,4 +29,10 @@ ol {
 a {
   text-decoration: none;
   color: var(--beige);
+}
+
+@media only screen and (max-width: 520px) {
+  .app-content {
+    min-width: 100%;
+  }
 }
