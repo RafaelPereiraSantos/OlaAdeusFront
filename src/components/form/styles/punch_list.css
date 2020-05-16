@@ -1,5 +1,9 @@
 @import '../../../common/color.css';
 
+.punch-list-content ol {
+  width: 100%;
+}
+
 .punch-list-content {
   display: flex;
   justify-content: center;

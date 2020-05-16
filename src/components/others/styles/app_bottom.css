@@ -1,0 +1,7 @@
+@import '../../../common/color.css';
+
+.footer-content {
+  background-color: var(--blue);
+  color: var(--beige);
+  min-height: 30px;
+}

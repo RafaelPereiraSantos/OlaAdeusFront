@@ -37,9 +37,12 @@ ol li {
 }
 
 .header-menu-item-drop-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 100px;
   min-height: 50px;
-  background-color: var(--light-green);
+  background-color: var(--blue);
   border: solid 1px var(--green);
 }
 
@@ -53,5 +56,5 @@ ol li {
 }
 
 .user-name {
-  margin-left: 20px;
+  margin-bottom-left: 20px;
 }

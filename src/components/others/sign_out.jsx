@@ -5,7 +5,6 @@ import UserRepository from '../../repository/user_repository.jsx'
 
 class SignOut extends React.Component {
   componentDidMount() {
-    console.log(1231231);
     this.user_sign_out = UserRepository.signOut(
       this.props.onSignOut,
       (err) => {}

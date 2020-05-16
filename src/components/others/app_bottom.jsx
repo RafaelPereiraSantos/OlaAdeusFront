@@ -4,7 +4,9 @@ import './styles/app_bottom.css';
 class AppBottom extends React.Component {
   render() {
     return(
-      <h1>Bottom</h1>
+      <div className='footer-content'>
+        bottom
+      </div>
     );
   }
 }

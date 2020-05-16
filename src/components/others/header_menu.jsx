@@ -14,29 +14,25 @@ class HeaderMenu extends React.Component {
 
     if (user === null) {
       content =
-        <div className='header-content-right'>
           <div className='header-menu'>
             <ul className='header-menu-list'>
               <MenuItem url='/sign-in' text='Sign-in'/>
               <MenuItem url='/sign-up' text='Sign-up'/>
             </ul>
           </div>
-        </div>
 
     } else {
 
       content =
-        <div className='header-content-right'>
           <div className='header-menu-drop-down'>
             <span><h1>{user.name}</h1></span>
             <div className='header-menu-list-drop-down'>
               <ol className='user-header-menu-list'>
-                <li className='header-menu-item-drop-down'><MenuItem url='/profile' text='Perfil'/></li>
-                <li className='header-menu-item-drop-down'><MenuItem url='/sign-out' text='Sair'/></li>
+                <DropDownMenuItem url='/profile' text='My Account'/>
+                <DropDownMenuItem url='/sign-out' text='Sign Out'/>
               </ol>
             </div>
           </div>
-        </div>
 
     };
 
@@ -46,6 +42,15 @@ class HeaderMenu extends React.Component {
       </div>
     );
   }
+};
+
+function DropDownMenuItem(props) {
+
+  return(
+    <li className='header-menu-item-drop-down'>
+      <Link to={props.url}>{props.text}</Link>
+    </li>
+  );
 };
 
 function MenuItem(props) {

@@ -14,27 +14,33 @@ li {
 
 .punch-list-item {
   display: flex;
-  background-color: var(--beige);
   justify-content: space-between;
   margin-top: 5px;
   height: 50px;
   width: 100%;
 }
 
-.punch-list-item-description {
+.punch-list-item-right-side {
+  background-color: var(--beige);
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--beige);
   color: var(--blue);
   width: 80%;
+  border: 1px solid var(--blue);
+  border-radius: 6px 0 0 6px;
+  padding: 5px;
 }
 
-.punch-list-item-time {
+.punch-list-item-left-side {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--blue);
   width: 20%;
   color: var(--beige);
+  border: 1px;
+  border-radius: 0 6px 6px 0;
+  padding: 5px;
 }

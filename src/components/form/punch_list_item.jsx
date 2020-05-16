@@ -6,10 +6,10 @@ class PunchListItem extends React.Component {
     return(
       <li>
         <div className='punch-list-item'>
-          <div className='punch-list-item-description'>
+          <div className='punch-list-item-right-side'>
             {this.props.punchType}
           </div>
-          <div className='punch-list-item-time'>
+          <div className='punch-list-item-left-side'>
             {this.props.time || 'no-time'}
           </div>
         </div>

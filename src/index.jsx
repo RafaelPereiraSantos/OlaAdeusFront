@@ -74,7 +74,7 @@ class App extends React.Component {
     return(
       <div className='app'>
         <Router>
-          <AppHeader user={this.state.user}/>
+          <AppHeader user={user}/>
           <div className='app-content'>
             <Switch>
 
@@ -87,7 +87,7 @@ class App extends React.Component {
               </Route>
 
               <Route path='/sign-out'>
-                { logged_page(<SignOut user={user}  onSignOut={this.handleSignOut.bind(this)}/>) }
+                { logged_page(<SignOut user={user} onSignOut={this.handleSignOut.bind(this)}/>) }
               </Route>
 
               <Route path='/punches'>

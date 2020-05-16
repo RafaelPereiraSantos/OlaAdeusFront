@@ -1,8 +1,11 @@
 @import './common/color.css';
+@import './common/size.css';
 
 * {
   padding: 0;
   margin: 0;
+  font-family: arial;
+  font-weight: 12px;
 }
 
 ol {
@@ -20,9 +23,10 @@ ol {
   display: flex;
   background-color: var(--beige);
   justify-content: center;
-  width: 35%;
+  max-width: 500px;
+  width: 50%;
   min-width: 480px;
-  min-height: 860px;
+  min-height: 100vh;
   margin: 0 auto;
 }
 
@@ -31,7 +35,7 @@ a {
   color: var(--beige);
 }
 
-@media only screen and (max-width: 520px) {
+@media (max-width: 500px) {
   .app-content {
     min-width: 100%;
   }
